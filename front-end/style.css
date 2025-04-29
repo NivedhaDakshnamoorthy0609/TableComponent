@@ -1,0 +1,223 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+  /* border: 1px solid #ccc; */
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f4;
+  z-index: 1;
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+tbody td {
+  /* border: 1px solid #ccc; */
+  padding: 10px 12px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table-scroll {
+  position: relative;
+  overflow-y: auto;
+  height: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  visibility: hidden;
+}
+
+th, td {
+  word-wrap: break-word;
+}
+
+tbody {
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.search-bar {
+  margin-top: 80px;
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  align-items: center;
+  border: 1px solid #ccc;         
+  border-radius: 6px;           
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  background-color: #fff;        
+
+
+  position: relative;
+}
+
+
+.search-bar input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 6px 0;
+  background-color: transparent;
+  width: 100%;
+  padding-left: 30px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.search-bar input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  left: 10px;  /* Positioning the icon on the left */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #888;  /* Adjust the color of the icon */
+}
+
+.reset-btn {
+  padding: 9px 16px;
+  font-size: 15px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #303f9f;
+}
+
+th.sortable {
+  cursor: pointer;
+}
+
+th .sort-icon {
+  margin-left: 5px;
+  font-size: 0.75em;
+  vertical-align: middle;
+}
+
+.no-data-message {
+  display: none;
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+}
+
+.no-data-message.visible {
+  display: block; 
+}
+
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 2;
+  padding: 6px 0;
+  list-style: none;
+  min-width: 100px;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f4f4f4;
+}
+
+.dropdown-menu.visible {
+  display: block;
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+  z-index: 10;
+  touch-action: none;
+}
+
+
+@media (max-width: 600px) {
+
+  .table-container {
+    max-width: 100%;
+  }
+
+  .resizer {
+    display: block;
+  }
+  
+}
+
