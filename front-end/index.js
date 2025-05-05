@@ -1,5 +1,5 @@
 import { columnConfig } from './config.js';
-import { GridComponent } from './grid-component.js';
+import { GridComponent } from './components/grid-component.js';
 
 const fetchData = async () => {
   try {

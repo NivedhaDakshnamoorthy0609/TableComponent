@@ -21,13 +21,26 @@ header {
   max-width: 100%;
   overflow: auto;
   /* border: 1px solid #ccc; */
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 table {
   width: 100%;
   table-layout: fixed;
   min-width: 600px;
+}
+
+.header-table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 600px;
+  /* border-collapse: collapse; */
+}
+
+.body-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
 
 thead th {
@@ -48,16 +61,17 @@ tbody td {
   box-sizing: border-box;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #fafafa;
+.row {
+  background-color: #f9f9f9 !important;
 }
 
 .table-scroll {
   position: relative;
-  overflow-y: auto;
+  overflow-x: auto;
   height: 400px;
   width: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .spacer {
@@ -68,57 +82,14 @@ tbody tr:nth-child(even) {
   visibility: hidden;
 }
 
-th, td {
+th,
+td {
   word-wrap: break-word;
 }
 
 tbody {
   transform: translateY(0);
   will-change: transform;
-}
-
-.search-bar {
-  margin-top: 80px;
-  display: flex;
-  gap: 8px;
-  padding: 16px;
-  align-items: center;
-  border: 1px solid #ccc;         
-  border-radius: 6px;           
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
-  background-color: #fff;        
-
-
-  position: relative;
-}
-
-
-.search-bar input[type="text"] {
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding: 6px 0;
-  background-color: transparent;
-  width: 100%;
-  padding-left: 30px;
-  transition: border-color 0.3s;
-}
-
-.search-bar input[type="text"]::placeholder {
-  color: #aaa;
-}
-
-.search-bar input[type="text"]:focus {
-  border-color: #007bff;
-}
-
-.search-bar .search-icon {
-  position: absolute;
-  left: 10px;  /* Positioning the icon on the left */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: #888;  /* Adjust the color of the icon */
 }
 
 .reset-btn {
@@ -155,7 +126,7 @@ th .sort-icon {
 }
 
 .no-data-message.visible {
-  display: block; 
+  display: block;
 }
 
 .dropdown-wrapper {
@@ -176,7 +147,7 @@ th .sort-icon {
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
   padding: 6px 0;
   list-style: none;
@@ -208,6 +179,44 @@ th .sort-icon {
   touch-action: none;
 }
 
+.search-input {
+  padding: 5px 10px;
+  width: 225px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.search-input.has-text {
+  background-color: #e0f7fa;
+}
+
+.search-row td {
+  padding: 10px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-input:focus {
+  border-bottom-color: #007BFF;
+}
+
+.search-toggle,
+.reset-toggle {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.search-toggle:hover,
+.reset-toggle:hover {
+  color: #007BFF;
+  transform: scale(1.2);
+}
 
 @media (max-width: 600px) {
 
@@ -218,6 +227,5 @@ th .sort-icon {
   .resizer {
     display: block;
   }
-  
-}
 
+}
